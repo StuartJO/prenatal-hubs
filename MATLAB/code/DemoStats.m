@@ -14,7 +14,7 @@ medAge = median(DemographicData.ScanAge);
 ScanAgemedStr = sprintf('%.0f weeks %.0f days', ...
     floor(medAge), round((medAge - floor(medAge))*7));
 
-% --- Age range in weeks/days ---
+% --- Age range (birth) in weeks/days ---
 minAge = min(DemographicData.BirthAge);
 maxAge = max(DemographicData.BirthAge);
 
@@ -23,7 +23,7 @@ BirthAgerangeStr = sprintf('%.0f weeks %.0f days – %.0f weeks %.0f days', ...
     floor(minAge), round((minAge - floor(minAge))*7), ...
     floor(maxAge), round((maxAge - floor(maxAge))*7));
 
-% --- Median scan age ---
+% --- Median birth age ---
 medAge = median(DemographicData.BirthAge);
 BirthAgemedStr = sprintf('%.0f weeks %.0f days', ...
     floor(medAge), round((medAge - floor(medAge))*7));
@@ -39,9 +39,9 @@ end
 
 % --- Print results ---
 
-fprintf('Birth age range: %s\n', ScanAgerangeStr);
-fprintf('Median birth age: %s\n', ScanAgemedStr);
+fprintf('Birth age range: %s\n', BirthAgerangeStr);
+fprintf('Median birth age: %s\n', BirthAgemedStr);
 
-fprintf('Scan age range: %s\n', BirthAgerangeStr);
-fprintf('Median scan age: %s\n', BirthAgemedStr);
+fprintf('Scan age range: %s\n', ScanAgerangeStr);
+fprintf('Median scan age: %s\n', ScanAgemedStr);
 fprintf('Total number of females: %d\n', nFemales);
